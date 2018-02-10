@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 184579790}
   - component: {fileID: 184579789}
   - component: {fileID: 184579788}
+  - component: {fileID: 184579791}
   m_Layer: 0
   m_Name: floor
   m_TagString: Untagged
@@ -212,6 +213,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &184579791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 184579787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a693f52a9cae4a3db48e2e5bc180a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &280942907
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,6 +234,7 @@ GameObject:
   - component: {fileID: 280942910}
   - component: {fileID: 280942909}
   - component: {fileID: 280942908}
+  - component: {fileID: 280942911}
   - component: {fileID: 280942912}
   m_Layer: 0
   m_Name: yellowbird-midflap
@@ -243,10 +256,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0}
   gravity: 0.001
-  gravity_max: 0.3
+  gravity_max: 0.2
   gravity_at: 0
   jumping: 0
-  jump_dist: 1
+  jump_speed: 0.005
+  jump_height: 0.05
 --- !u!212 &280942909
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -304,6 +318,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &280942911
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 280942907}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.34, y: 0.24}
+    newSize: {x: 0.34, y: 0.24}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.34, y: 0.24}
+  m_EdgeRadius: 0
 --- !u!50 &280942912
 Rigidbody2D:
   serializedVersion: 4
@@ -318,7 +357,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -479,6 +518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1082279229}
   - component: {fileID: 1082279228}
+  - component: {fileID: 1082279230}
   m_Layer: 0
   m_Name: floor
   m_TagString: Untagged
@@ -543,6 +583,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1082279230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1082279227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a693f52a9cae4a3db48e2e5bc180a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1169862242
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,7 +695,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -711,7 +762,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1178814224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.378, y: -2, z: 0}
+  m_LocalPosition: {x: 5, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -728,7 +779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419bea0abc9564ecdac33d2f8c1ff44f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 0.03
 --- !u!114 &1178814229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,7 +788,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1178814224}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c683955a16e434f1592131611d49b9fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a693f52a9cae4a3db48e2e5bc180a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1279338357
@@ -766,7 +817,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1279338357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e6196502939546a0b9348d189b969de, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a693f52a9cae4a3db48e2e5bc180a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &1279338359
@@ -845,7 +896,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1279338357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.38, y: 2, z: 0}
+  m_LocalPosition: {x: 5, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -860,6 +911,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1296675592}
   - component: {fileID: 1296675591}
+  - component: {fileID: 1296675593}
   m_Layer: 0
   m_Name: floor
   m_TagString: Untagged
@@ -924,6 +976,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1296675593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1296675590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a693f52a9cae4a3db48e2e5bc180a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1501798494
 GameObject:
   m_ObjectHideFlags: 0

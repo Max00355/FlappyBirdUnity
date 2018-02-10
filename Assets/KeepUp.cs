@@ -5,9 +5,11 @@ public class KeepUp : MonoBehaviour
 {
 	public Vector2 position = new Vector2 (0, 0);
 	public float gravity = 0.001f;
-	public float gravity_max = 0.3f;
+	public float gravity_max = 0.2f;
 	public float gravity_at = 0;
 	public float jumping = 0;
+	public float jump_speed = 0.005f;
+	public float jump_height = 0.05f;
 
 	void Start ()
 	{
@@ -16,7 +18,7 @@ public class KeepUp : MonoBehaviour
 
 	void Jump() {
 		position.y += jumping;
-		jumping -= 0.01f;
+		jumping -= jump_speed;
 	}
 
 	void Gravity() {
@@ -30,7 +32,7 @@ public class KeepUp : MonoBehaviour
 	void Update ()
 	{	
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			jumping = 0.1f;
+			jumping = jump_height;
 			gravity_at = 0;
 		}
 
@@ -42,5 +44,6 @@ public class KeepUp : MonoBehaviour
 		gameObject.transform.position = this.position;
 
 	}
+
 }
 
